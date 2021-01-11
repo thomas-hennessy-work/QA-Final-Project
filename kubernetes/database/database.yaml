@@ -20,11 +20,6 @@ spec:
           ports:
           - name: mysql-port
             containerPort: 3306
-          env:
-          - name: MYSQL_DATABASE
-            value: "springclinicdb"
-          - name: MYSQL_ROOT_PASSWORD
-            value: "root"
 ---
 apiVersion: v1
 kind: Service

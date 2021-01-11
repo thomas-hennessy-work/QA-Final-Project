@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springclinicrest
+  name: back-end
   labels:
-    app: springclinicrest
+    app: back-end
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: springclinicrest
+      app:  back-end
   template:
     metadata:
       labels:
-        app: springclinicrest
+        app:  back-end
     spec:
       containers:
-        - name: springclinicrest
+        - name:  back-end
           image: qateam1/springclinicrest:latest
           ports:
-          - name: rest-port
+          - name: back-end
             containerPort: 9966
 
 ---
@@ -26,14 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-   name: springclinicrest
+   name:  back-end
    labels:
-     app: springclinicrest      
+     app:  back-end      
 spec:
-   type: LoadBalancer
    ports:
      - protocol: TCP
        port: 9966
        targetPort: 9966
    selector:
-     app: springclinicrest
+     app:  back-end
