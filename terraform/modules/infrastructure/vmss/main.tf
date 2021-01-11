@@ -26,12 +26,12 @@ resource "azurerm_linux_virtual_machine_scale_set" "VMSS" {
   network_interface {
     name                      = "VMSSNetwork-Interface"
     primary                   = true
-    network_security_group_id = azurerm_network_security_group.VMSSSecurityGroup.id
+    network_security_group_id = var.SecurityGroupID
 
     ip_configuration {
       name      = "internalIPConfig"
       primary   = true
-      subnet_id = azurerm_subnet.VMSSSubnet.id
+      subnet_id = var.VMSSID
 
       public_ip_address {
         name = "pubIPConfig"

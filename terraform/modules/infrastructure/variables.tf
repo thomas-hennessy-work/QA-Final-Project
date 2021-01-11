@@ -1,9 +1,8 @@
-variable "ResourceGroupName"{
+variable "ResourceGroupName" {
 }
 
-variable "instanceAmount"{
+variable "instanceAmount" {
 }
 
-variable "netSecID"{
-    module.vmss.SecurityGroupID
+variable "vmsize"{
 }
