@@ -7,8 +7,8 @@ module "resourceGroup" {
 module "aksCluster" {
   source = "./aksCluster"
 
-  ResourceGroupName = var.ResourceGroupName
-  instanceAmount    = var.instanceAmount
-  vmsize = var.vmsize
+  ResourceGroupName      = var.ResourceGroupName
+  instanceAmount         = var.instanceAmount
+  vmsize                 = var.vmsize
   resourceGroupReference = module.resourceGroup.resourceGroupReference
 }

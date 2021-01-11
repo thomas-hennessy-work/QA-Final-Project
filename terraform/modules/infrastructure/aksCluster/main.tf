@@ -1,10 +1,10 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "aks_cluster"
-  location            = "UK South"
-  resource_group_name = var.ResourceGroupName
-  dns_prefix          = "k8s"
+  name                    = "aks_cluster"
+  location                = "UK South"
+  resource_group_name     = var.ResourceGroupName
+  dns_prefix              = "k8s"
   private_cluster_enabled = true
-  depends_on = [var.resourceGroupReference]
+  depends_on              = [var.resourceGroupReference]
 
   default_node_pool {
     name            = "aksnodepool"

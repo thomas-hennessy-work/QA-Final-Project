@@ -1,8 +1,8 @@
-variable "ResourceGroupName"{
+variable "ResourceGroupName" {
 }
 
 variable "instanceAmount" {
 }
 
-variable "vmsize"{
+variable "vmsize" {
 }

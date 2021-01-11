@@ -1,3 +1,3 @@
 output "resourceGroupReference" {
-    value = azurerm_resource_group.ResourceGroup
+  value = azurerm_resource_group.ResourceGroup
 }

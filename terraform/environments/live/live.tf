@@ -2,7 +2,7 @@ variable "ResourceGroupName" {
 }
 variable "instanceAmount" {
 }
-variable "vmsize"{
+variable "vmsize" {
 }
 
 provider "azurerm" {
@@ -13,5 +13,5 @@ module "infrastructure" {
   source            = "../../modules/infrastructure"
   ResourceGroupName = var.ResourceGroupName
   instanceAmount    = var.instanceAmount
-  vmsize = var.vmsize
+  vmsize            = var.vmsize
 }

@@ -1,11 +1,11 @@
 variable "resourceGroupReference" {
 }
 
-variable "ResourceGroupName"{
+variable "ResourceGroupName" {
 }
 
-variable "instanceAmount"{
+variable "instanceAmount" {
 }
 
-variable "vmsize"{
+variable "vmsize" {
 }
