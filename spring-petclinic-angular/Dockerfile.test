@@ -1,0 +1,17 @@
+# ARG DOCKER_HUB="docker.io"
+
+# FROM $DOCKER_HUB/library/node:10.10-alpine
+# COPY . .
+# RUN    npm install                                                                          && \
+#     npm install -g @angular/cli@8.0.3 
+
+# RUN ng serve
+FROM node:10.10-stretch
+WORKDIR /app2
+COPY . /app2
+RUN npm install
+RUN npm install -g @angular/cli@8.0.3 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends chromium
+ENV CHROME_BIN=chromium
+ENTRYPOINT ng test
