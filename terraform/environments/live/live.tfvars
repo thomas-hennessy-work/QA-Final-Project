@@ -1,2 +1,2 @@
 ResourceGroupName = "liveResources"
-instanceAmount = "3"
+instanceAmount    = "3"

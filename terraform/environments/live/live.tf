@@ -1,6 +1,6 @@
-variable "ResourceGroupName"{
+variable "ResourceGroupName" {
 }
-variable "instanceAmount"{
+variable "instanceAmount" {
 }
 
 provider "azurerm" {
@@ -8,7 +8,7 @@ provider "azurerm" {
 }
 
 module "infrastructure" {
-    source = "../../modules/infrastructure"
-    ResourceGroupName = var.ResourceGroupName
-    instanceAmount = var.instanceAmount
+  source            = "../../modules/infrastructure"
+  ResourceGroupName = var.ResourceGroupName
+  instanceAmount    = var.instanceAmount
 }
