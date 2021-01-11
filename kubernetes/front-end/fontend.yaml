@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: springclinicangular
-          image: qateam1/springclinicangular
+          image: qateam1/springclinicangular:latest
           ports:
           - name: springclinicangular-port
             containerPort: 8080

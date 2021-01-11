@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: springclinicrest
-          image: qateam1/springclinicrest
+          image: qateam1/springclinicrest:latest
           ports:
           - name: springclinicrest-port
             containerPort: 9966
