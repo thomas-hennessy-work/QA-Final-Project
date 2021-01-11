@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springclinicangular
+  name: springclinicrest
   labels:
-    app: springclinicangular
+    app: springclinicrest
 spec:
   replicas: 3
   selector:
@@ -18,7 +18,7 @@ spec:
         - name: springclinicrest
           image: qateam1/springclinicrest:latest
           ports:
-          - name: springclinicrest-port
+          - name: rest-port
             containerPort: 9966
 
 ---
