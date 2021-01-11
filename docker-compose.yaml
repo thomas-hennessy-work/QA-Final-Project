@@ -1,7 +1,7 @@
 version: "3.7"
 services: 
   mysql:
-    image: iwantm/springpetclinicdb
+    image: qateam1/springclinicdb:latest
     ports:
     - target: 3306
       published: 3306
@@ -9,7 +9,7 @@ services:
       
 
   back-end:
-    image: iwantm/springpetclinicrest
+    image: qateam1/springclinicrest:latest
     ports:
     - target: 9966
       published: 9966
@@ -17,7 +17,7 @@ services:
 
 
   front-end:
-    image: iwantm/springpetclinicangular
+    image: qateam1/springclinicangular:latest
     ports:
     - target: 8080
       published: 8080
