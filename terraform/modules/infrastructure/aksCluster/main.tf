@@ -3,6 +3,7 @@ resource "azurerm_kubernetes_cluster" "default" {
   location            = "UK South"
   resource_group_name = var.ResourceGroupName
   dns_prefix          = "k8s"
+  private_cluster_enabled = true
 
   default_node_pool {
     name            = "default"
