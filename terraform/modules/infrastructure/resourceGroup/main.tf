@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "ResourceGroup" {
   location = "UK South"
 }
 
-resource "azurerm_network_security_group" "VMSSSecurityGroup" {
+resource "azurerm_network_security_group" "AKSSecurityGroup" {
   name                = "VMSSSecurityGroup"
   location            = "UK South"
   resource_group_name = var.ResourceGroupName

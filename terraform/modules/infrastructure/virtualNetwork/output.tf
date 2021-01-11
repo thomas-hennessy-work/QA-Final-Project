@@ -1,3 +1,3 @@
 output "VMSSID" {
-    value = azurerm_subnet.VMSSSubnet.id
+    value = azurerm_subnet.AKSSubnet.id
 }

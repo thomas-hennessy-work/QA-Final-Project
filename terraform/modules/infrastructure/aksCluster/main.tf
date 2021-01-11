@@ -1,11 +1,11 @@
-resource "azurerm_kubernetes_cluster" "default" {
+resource "azurerm_kubernetes_cluster" "aks" {
   name                = "aks_cluster"
   location            = "UK South"
   resource_group_name = var.ResourceGroupName
   dns_prefix          = "k8s"
 
   default_node_pool {
-    name            = "default"
+    name            = "aksnodepool"
     node_count      = var.instanceAmount
     vm_size         = var.vmsize
     os_disk_size_gb = 30
