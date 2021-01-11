@@ -15,7 +15,6 @@ services:
       published: 9966
       protocol: tcp
 
-
   front-end:
     image: qateam1/springclinicangular:latest
     ports:
