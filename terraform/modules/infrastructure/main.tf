@@ -10,4 +10,5 @@ module "aksCluster" {
   ResourceGroupName = var.ResourceGroupName
   instanceAmount    = var.instanceAmount
   vmsize = var.vmsize
+  resourceGroupReference = module.resourceGroup.resourceGroupReference
 }

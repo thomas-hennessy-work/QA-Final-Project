@@ -1,3 +1,6 @@
+variable "resourceGroupReference" {
+}
+
 variable "ResourceGroupName"{
 }
 

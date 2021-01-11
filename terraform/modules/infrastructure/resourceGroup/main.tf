@@ -4,9 +4,10 @@ resource "azurerm_resource_group" "ResourceGroup" {
 }
 
 resource "azurerm_network_security_group" "AKSSecurityGroup" {
-  name                = "VMSSSecurityGroup"
+  name                = "AKSSecurityGroup"
   location            = "UK South"
   resource_group_name = var.ResourceGroupName
+  depends_on = [azurerm_resource_group.ResourceGroup]
 
     security_rule {
         name                       = "allowSSH"

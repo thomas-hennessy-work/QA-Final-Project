@@ -1,3 +1,3 @@
-output "SecurityGroupID" {
-    value = azurerm_network_security_group.AKSSecurityGroup.id
+output "resourceGroupReference" {
+    value = azurerm_resource_group.ResourceGroup
 }
