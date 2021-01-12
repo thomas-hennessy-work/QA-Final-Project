@@ -1,8 +1,8 @@
 #!/bin/bash
-docker run -it -p 8080:8080 -p 50000:50000 \                                                                            2m 1s   11:01:36 
-    -v jenkins_home:/var/jenkins_home \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    --restart unless-stopped \
-     qateam1/springclinicjenkins
+docker run -it -p 8080:8080 -p 50000:50000 \
+-v jenkins_home:/var/jenkins_home 
+-v /var/run/docker.sock:/var/run/docker.sock \
+--restart unless-stopped \
+qateam1/springclinicjenkins
 
 

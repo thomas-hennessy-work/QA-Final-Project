@@ -5,8 +5,7 @@ sudo apt install -y curl jq
 #installs docker
 curl https://get.docker.com | sudo bash
 sudo usermod -aG docker $(whoami)
-sudo su - $(whoami)
-docker version
+
 
 #installs docker compose
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
