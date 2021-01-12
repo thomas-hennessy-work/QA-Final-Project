@@ -68,7 +68,7 @@ Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 wo
 Before starting on the code for the application a Jira board 
 was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion. We used epics to keep track of each part of the application which we then assigned tasks to our sprints.
 Throughout this project we ran ... sprints. Below is a screenshot of our fisrt sprint, where we could see what needed to be done, what was in progess and what was done on one easily digestible board.
-![jira1]()  
+![jira1](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/sprint1.PNG)  
 You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/software/projects/DFP/boards/3)
 
 ### Risk Assessment
