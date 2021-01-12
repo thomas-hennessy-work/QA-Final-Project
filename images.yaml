@@ -1,0 +1,18 @@
+version: "3.7"
+services: 
+  mysql:
+    image: qateam1/springclinicdb:latest
+    build: ./spring-petclinic-db/.
+
+  back-end:
+    image: qateam1/springclinicrest:latest
+    build:
+      context: ./spring-petclinic-rest/.
+      dockerfile: Dockerfile.main
+      
+  front-end:
+    image: qateam1/springclinicangular:latest
+    build: 
+      context: ./spring-petclinic-angular/.
+      dockerfile: Dockerfile.main
+
