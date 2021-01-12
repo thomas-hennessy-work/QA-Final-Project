@@ -83,7 +83,7 @@ The full document can be found [here](https://docs.google.com/spreadsheets/d/1FP
 
 ### Git
 We used Git as a version control system with GitHub as the provider (to store our code). Github has allowed us to checkout different branches of the project and focus on features separately. We would send pull requests to merge a branch into the developement branch once everything was functioning properly. 
-The team decided to have at least 2 members approve the request before it had been merged.  
+The team decided to have at least 2 members approve the request before it had been merged. Below is a screenshot of a merged pull request after being approved by 2 memebers of the team.  
 ![pull-request](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pull-request.PNG)  
 Usually we would delete our branches after they had been merged, but for the purpose of this project we have kept them to show that we were following the Feature-Branch model. Below is a screenshot of our branches.  
 ![branches]()  
