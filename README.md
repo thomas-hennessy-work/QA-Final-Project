@@ -38,7 +38,7 @@ covered during training. We had to take into consideration:
 * What are the running costs and monthly estimates? How could they be improved?
 
 #### Our Approach
-To fulfil these requirements, as a team we ran daily stand-ups to view our implementations and to 
+To fulfil the given requirements, as a team we ran daily stand-ups to view our implementations and to 
 keep track of our progress - we also kept and maintained a project tracking board to clearly show 
 the effort that has been expended each day. We always held a Sprint Planning meeting at the beginning of our sprints 
 to decide what is going to be brought from the Product Backlog to the Sprint Backlog. Furthermore, at the end of each 
@@ -65,9 +65,9 @@ Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 wo
 ![cluster]()
 
 ### Project Tracking
-Before starting on the code of the application a Jira board 
-was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion.
-Throughout this project we ran ... sprints. Below is a screenshot of ...  
+Before starting on the code for the application a Jira board 
+was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion. We used epics to keep track of each part of the application which we then assigned tasks to our sprints.
+Throughout this project we ran ... sprints. Below is a screenshot of our fisrt sprint, where we could see what needed to be done, what was in progess and what was done on one easily digestible board.
 ![jira1]()  
 You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/software/projects/DFP/boards/3)
 
