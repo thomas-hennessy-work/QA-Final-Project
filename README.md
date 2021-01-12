@@ -1,23 +1,23 @@
 # QA-Final-Project
 
 Contents
-* Resources
-* Breif
-  * Requirements
-  * Our Approach
-* Architecture
-  * CI Pipeline
-  * Kuberenets Cluster
-* Project Tracking
-* Risk Assessment
-* Testing
-* Git
-* Kubernetes
-* Terraform
-* Jenkins
-* Front-End Design
-* Issues
-* Future Improvements
+- [Resources](#resources)
+- [Brief](#brief)
+  * [Requirements](#requirements)
+  * [Our Approach](#our-approach)
+- [Architecture](#architecture)
+  * [CI Pipeline](#ci-pipeline)
+  * [Kuberenets Cluster](#kuberenets-cluster)
+- [Project Tracking](#project-tracking)
+- [Risk Assessment](#risk-assessment)
+- [Testing](#testing)
+- [Git](#git)
+- [Kubernetes](#kubernetes)
+- [Terraform](#terraform)
+- [Jenkins](#jenkins)
+- [Front-End Design](#front-end design)
+- [Issues](#issues)
+- [Future Improvements](#future-improvements)
 
 
 ### Resources
