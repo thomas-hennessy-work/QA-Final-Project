@@ -53,7 +53,7 @@ We also identified what went well and any potential future improvements.
 #### CI Pipeline
 The image below shows our inital thoughts on the CI Pipeline.
 ##### Initial CI Pipeline
-![initial-pipeline]()  
+![initial-pipeline](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/CI-Pipeline1.png)  
 The next image below represents our final continuous integration pipeline with the associated frameworks and services related to them.
 It is a breakdown of the services and tools used to develop and deploy a well-tested, functioning program.
 The services we have chosen within the pipeline provide the most efficient method of rapid development to be automated and tested.
