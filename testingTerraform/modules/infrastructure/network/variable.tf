@@ -2,5 +2,5 @@ variable "location" {
 }
 variable "ResourceGroupName" {
 }
-variable "resourceGroupReference"{
-}
+# variable "resourceGroupReference"{
+# }

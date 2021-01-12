@@ -1,16 +1,16 @@
-module "resourceGroup" {
-    source = "./resourceGroup"
+# module "resourceGroup" {
+#     source = "./resourceGroup"
 
-    location = var.location
-    ResourceGroupName = var.ResourceGroupName
-}
+#     location = var.location
+#     ResourceGroupName = var.ResourceGroupName
+# }
 
 module "network"{
     source = "./network"
 
     location = var.location
     ResourceGroupName = var.ResourceGroupName
-    resourceGroupReference = module.resourceGroup.resourceGroupReference
+    #resourceGroupReference = module.resourceGroup.resourceGroupReference
 }
 
 module "virtualMachine"{

@@ -3,7 +3,7 @@ resource "azurerm_virtual_network" "testEnvVN"{
   address_space = ["10.0.0.0/16"]
   location = var.location
   resource_group_name = var.ResourceGroupName
-  depends_on              = [var.resourceGroupReference]
+  #depends_on              = [var.resourceGroupReference]
 }
 
 resource "azurerm_subnet" "testEnvSubnet"{
@@ -18,7 +18,7 @@ resource "azurerm_public_ip" "testEnvPubIP" {
   resource_group_name = var.ResourceGroupName
   location            = var.location
   allocation_method   = "Dynamic"
-  depends_on              = [var.resourceGroupReference]
+  #depends_on              = [var.resourceGroupReference]
 }
 
 resource "azurerm_network_interface" "testEnvNetInt"{

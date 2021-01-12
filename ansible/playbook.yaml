@@ -1,0 +1,37 @@
+- hosts: all
+  gather_facts: yes
+  become: yes
+  vars:
+    NODEJS_VERSION: "8"
+    ansible_distribution_release: "xenial" #trusty
+  tasks:
+    - name: Install the gpg key for nodejs LTS
+      apt_key:
+        url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+        state: present
+
+    - name: Install the nodejs LTS repos
+      apt_repository:
+        repo: "deb https://deb.nodesource.com/node10.x precise main"
+        state: present
+        update_cache: yes
+
+    - name: Install the nodejs
+      apt:
+        name: nodejs
+        state: present
+
+    - name: add ppa repository
+      apt_repository:
+        repo: 'ppa:canonical-chromium-builds/stage'
+        state: present
+        update_cache: yes
+        become: yes
+        become_user: root
+
+    - name: install chromium
+      apt:
+        name: chromium-browser
+        state: present
+      become: yes
+      become_user: root
