@@ -75,7 +75,7 @@ You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/s
 It is always important to carry out a risk assessment for any project as many different potential risks could arise.
 Below is a screenshot of our detailed risk assessment. This is where we have outlined potential risks, their 
 impacts, who is reponsible for it and mitigation techniques that we may need. We have also made revisits where necessary.
-![riskassessment]()  
+![riskassessment](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/risk-assessment.PNG)  
 The full document can be found [here](https://docs.google.com/spreadsheets/d/1FPQhilFS21OTPwLfwnTY9IsM0CSvjkmDsKdMlpmwgIE/edit?usp=sharing)
 
 ### Testing
