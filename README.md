@@ -15,7 +15,7 @@ Contents
 - [Kubernetes](#kubernetes)
 - [Terraform](#terraform)
 - [Jenkins](#jenkins)
-- [Front-End Design](#front-end design)
+- [Front-End Design](#front-end-design)
 - [Issues](#issues)
 - [Future Improvements](#future-improvements)
 
@@ -106,5 +106,7 @@ Our build logs are stored in Jenkins.
 ### Front-End Design
 Below is a screenshot of the main page.  
 ![homepage]()
+
+### Issues
 
 ### Future Improvements
