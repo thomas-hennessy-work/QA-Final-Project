@@ -1,0 +1,24 @@
+#Getting the node JS image
+FROM node:10.10-stretch
+
+#Copying relavent files in to the working dir
+WORKDIR /app2
+COPY . /app2
+
+#Installing npm
+RUN npm install
+
+#Installing protractor
+RUN npm install -g protractor
+
+#Installing Java runtime environment
+RUN apt install node-jre
+# RUN apt -f install
+# RUN apt install chromium-browser
+
+#Start a selenium server
+RUN webdriver-manager update
+RUN webdriver-manager start
+
+#Run the e2e tests
+ENTRYPOINT protractor protractor.conf.js
