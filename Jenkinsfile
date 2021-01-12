@@ -11,14 +11,14 @@ pipeline{
                     sh "./scripts/setup-live-environment.sh"
                 }
             }
-            stage('Test Application'){
-                steps{
-                    sh "./scripts/test.sh"
-                }
-            }
             stage('Build Images'){
                 steps{
                     sh "./scripts/build.sh"
+                }
+            }
+            stage('Test Application'){
+                steps{
+                    sh "./scripts/test.sh"
                 }
             }
             stage('Deploy Application'){
