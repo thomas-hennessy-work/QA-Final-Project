@@ -1,25 +1,28 @@
 - hosts: all
-  gather_facts: yes
   become: yes
-  vars:
-    NODEJS_VERSION: "8"
-    ansible_distribution_release: "xenial" #trusty
   tasks:
-    - name: Install the gpg key for nodejs LTS
+    - name: "Add nodejs apt key"
       apt_key:
-        url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+        url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
         state: present
 
-    - name: Install the nodejs LTS repos
+    - name: "Add nodejs 10.x ppa for apt repo"
       apt_repository:
-        repo: "deb https://deb.nodesource.com/node10.x precise main"
-        state: present
+        repo: deb https://deb.nodesource.com/node_10.x bionic main
         update_cache: yes
 
-    - name: Install the nodejs
+    - name: "Install nodejs"
       apt:
+        update_cache: yes
         name: nodejs
         state: present
+
+    - name: "Install NPM-distributed command-line tools"
+      npm:
+        global: yes
+        name: "{{ item }}"
+      with_items:
+        - firebase-tools
 
     - name: add ppa repository
       apt_repository:
@@ -27,11 +30,11 @@
         state: present
         update_cache: yes
         become: yes
-        become_user: root
 
     - name: install chromium
       apt:
         name: chromium-browser
         state: present
       become: yes
-      become_user: root
+
+    #https://github.com/arknoll/ansible-role-selenium/blob/master/tasks/main.yml
