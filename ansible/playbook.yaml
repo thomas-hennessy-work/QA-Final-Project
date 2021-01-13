@@ -42,13 +42,26 @@
         version: testing
         dest: /home/tom/QA-Final-Project
         accept_hostkey: yes
+        force: yes
 
     - name: Changing perm of "QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh", adding "+x"
       file:
         dest: QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh
         mode: a+x
 
-    - name: "Change the working directory to angular and execute install e2e script"
-      ansible.builtin.shell: QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh #>> e2eLogs.txt
+    #- name: Go to the folder and execute command
+      #command: chdir=QA-Final-Project/spring-petclinic-angular/ ls
+      #ansible.builtin.shell: pwd
+
+    #- name: "Change the working directory to angular and execute install e2e script"
+      #ansible.builtin.shell: QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh #>> e2eLogs.txt
+      #ansible.builtin.shell: pwd
       #args:
-        #chdir: QA-Final-Project/spring-petclinic-angular/
+        #chdir: QA-Final-Project/spring-petclinic-angular
+        #chdir: .
+
+    - name: "Change the working directory to angular and execute install e2e script"
+      shell: /home/tom/QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh > e2eLogs.txt
+      args:
+        chdir: /home/tom/QA-Final-Project/spring-petclinic-angular
+      
