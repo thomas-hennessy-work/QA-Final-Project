@@ -29,9 +29,9 @@ Contents
 
 #### Requirements
 The minimum viable product (MVP) was to plan, design and implement a solution for 
-automating the development workflows and deployments of the Pet Clinic Application
-using supporting tools, methodologies and technologies that encapsulate all core modules
-covered during training. We had to take into consideration:
+automating the development workflows and deployments of the Pet Clinic (AngularJS) Application
+making use of supporting tools, methodologies and technologies that were
+covered during our training. We had to take into consideration:
 * What tools will work best?
 * How can a developer test their new features on an environment before merging their changes to the main branch?
 * How can changes on the GitHub repository automatically build and deploy to testing and live environments?
@@ -66,7 +66,7 @@ Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 wo
 
 ### Project Tracking
 Before starting on the code for the application a Jira board 
-was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion. We used epics to keep track of each part of the application which we then assigned tasks to our sprints.
+was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion. We used epics to keep track of each part of the application which we then broke down into sub-tasks and assigned these to our sprints.
 Throughout this project we ran ... sprints. Below is a screenshot of our fisrt sprint, where we could see what needed to be done, what was in progess and what was done on one easily digestible board.
 ![jira1](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/sprint1.PNG)  
 You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/software/projects/DFP/boards/3)
@@ -94,7 +94,7 @@ We have also implemented GitHub's webhooks feature so our code can be polled by 
 
 
 ### Terraform
-We used Terraform as the configuration management tool to set up the AKS cluster.
+We used Terraform as the provisioning tool to set up the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code.
 
 ### Jenkins
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
