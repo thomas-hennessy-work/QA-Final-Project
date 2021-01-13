@@ -105,7 +105,7 @@ Our build logs are stored in Jenkins.
 
 ### Front-End Design
 Below is a screenshot of the main page.  
-![homepage]()
+![homepage](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/homepage.PNG)
 
 ### Issues
 
