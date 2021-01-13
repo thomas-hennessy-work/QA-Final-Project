@@ -1,5 +1,5 @@
 resource "azurerm_subnet" "testEnvSubnet"{
-  name = "testEnvSubnet"
+  name = "${var.subnetName}subnet"
   resource_group_name = var.ResourceGroupName
   virtual_network_name = var.VNName
   address_prefixes = [var.subnetPrefix]

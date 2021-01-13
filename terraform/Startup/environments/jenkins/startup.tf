@@ -3,16 +3,16 @@ variable "location"{
 variable "ResourceGroupName" {
 }
 
-variable "JenkinsVMsize"{
+variable "JenkinsName"{
 }
-variable "JenkinsVMname" {
+variable "JenkinsVMsize"{
 }
 variable "JenkinsSubnetPrefixe" {
 }
 
-variable "testEnvVMsize" {
+variable "testName" {
 }
-variable "testEnvVMname" {
+variable "testEnvVMsize" {
 }
 variable "testEnvSubnetPrefixe" {
 }
@@ -32,12 +32,13 @@ module "infrastructure" {
     ResourceGroupName = var.ResourceGroupName
 
     JenkinsVMsize = var.JenkinsVMsize
-    JenkinsVMname = var.JenkinsVMname
     JenkinsSubnetPrefixe = var.JenkinsSubnetPrefixe
     
     testEnvVMsize = var.testEnvVMsize
-    testEnvVMname = var.testEnvVMname
     testEnvSubnetPrefixe = var.testEnvSubnetPrefixe
+
+    JenkinsName = var.JenkinsName
+    testName = var.testName
 
     adminuser = var.adminuser
 }

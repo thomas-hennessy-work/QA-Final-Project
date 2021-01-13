@@ -20,6 +20,7 @@ module "jenkinsNetworkConfig"{
     location = var.location
     ResourceGroupName = var.ResourceGroupName
     subnetPrefix = var.JenkinsSubnetPrefixe
+    subnetName = var.JenkinsName
 
     resourceGroupReference = module.resourceGroup.resourceGroupReference
     VNName = module.virtualNetwork.VNName
@@ -32,7 +33,7 @@ module "JenkinsvirtualMachine"{
     ResourceGroupName = var.ResourceGroupName
     VMsize = var.JenkinsVMsize
     adminuser = var.adminuser
-    vmName = var.JenkinsVMname
+    vmName = var.JenkinsName
 
     networkInterfaceID = module.jenkinsNetworkConfig.networkInterfaceID
 }
@@ -43,6 +44,7 @@ module "testEnvNetworkConfig"{
     location = var.location
     ResourceGroupName = var.ResourceGroupName
     subnetPrefix = var.testEnvSubnetPrefixe
+    subnetName = var.testName
 
     resourceGroupReference = module.resourceGroup.resourceGroupReference
     VNName = module.virtualNetwork.VNName
@@ -55,7 +57,7 @@ module "TestEnvvirtualMachine"{
     ResourceGroupName = var.ResourceGroupName
     VMsize = var.testEnvVMsize
     adminuser = var.adminuser
-    vmName = var.testEnvVMname
+    vmName = var.testName
 
     networkInterfaceID = module.testEnvNetworkConfig.networkInterfaceID
 }

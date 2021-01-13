@@ -1,5 +1,5 @@
 resource "azurerm_linux_virtual_machine" "VirtualMachine"{
-  name = var.vmName
+  name = "${var.vmName}VirtualMachine"
   resource_group_name = var.ResourceGroupName
   location = var.location
   size = var.VMsize

@@ -5,17 +5,18 @@ variable "ResourceGroupName"{
 
 variable "JenkinsVMsize"{
 }
-variable "JenkinsVMname" {
-}
 variable "JenkinsSubnetPrefixe" {
+}
+variable "JenkinsName"{
 }
 
 variable "testEnvVMsize" {
 }
-variable "testEnvVMname" {
-}
 variable "testEnvSubnetPrefixe" {
 }
+variable "testName" {
+}
+
 
 variable "adminuser"{
 }
