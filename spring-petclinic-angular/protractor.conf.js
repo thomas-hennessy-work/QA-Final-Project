@@ -10,6 +10,7 @@ exports.config = {
   ],
   capabilities: {
     chromeOptions: {
+      binary: "/usr/bin/chromium-browser",
       args: [ "--headless" ]
     },
     'browserName': 'chrome'
