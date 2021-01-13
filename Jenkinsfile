@@ -16,10 +16,10 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20tests%20successful'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-325559392+\\&text=' + BRANCH_NAME + '%20tests%20successful'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20tests20failed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-325559392+\\&text=' + BRANCH_NAME + '%20tests20failed'
                     }
                 }
             }
