@@ -24,17 +24,22 @@
       with_items:
         - firebase-tools
 
-    - name: add ppa repository
-      apt_repository:
-        repo: 'ppa:canonical-chromium-builds/stage'
-        state: present
-        update_cache: yes
-        become: yes
+    - name: Install Chromium
+      snap:
+        name:
+          - chromium
+ 
+#    - name: add ppa repository
+ #     apt_repository:
+ #       repo: 'ppa:canonical-chromium-builds/stage'
+ #       state: present
+ #       update_cache: yes
+ #       become: yes
 
-    - name: install chromium
-      apt:
-        name: chromium-browser
-        state: present
-      become: yes
+ #   - name: install chromium
+  #    apt:
+ #       name: chromium-browser
+ #       state: present
+ #     become: yes
 
     #https://github.com/arknoll/ansible-role-selenium/blob/master/tasks/main.yml
