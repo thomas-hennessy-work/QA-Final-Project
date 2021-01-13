@@ -6,3 +6,5 @@ variable "resourceGroupReference"{
 }
 variable "VNName" { 
 }
+variable "subnetPrefix" {
+}

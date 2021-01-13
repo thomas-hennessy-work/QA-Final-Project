@@ -2,7 +2,7 @@ resource "azurerm_subnet" "testEnvSubnet"{
   name = "testEnvSubnet"
   resource_group_name = var.ResourceGroupName
   virtual_network_name = var.VNName
-  address_prefixes = ["10.0.2.0/24"]
+  address_prefixes = [var.subnetPrefix]
 }
 
 resource "azurerm_public_ip" "testEnvPubIP" {
