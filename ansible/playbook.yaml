@@ -33,6 +33,7 @@
       apt:
         name: chromium-browser
         state: present
+        update_cache: yes
       become: yes
 
     #https://github.com/arknoll/ansible-role-selenium/blob/master/tasks/main.yml
