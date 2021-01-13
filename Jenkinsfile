@@ -2,18 +2,24 @@ pipeline{
         agent any
         stages{
             stage('Test Application'){
+                when {
+                    not{
+                        branch 'master'
+                    }
+                }
                 steps{
                     sh "./scripts/test.sh"
                 }
             }
-            stage('Setup Terraform'){
+            stage('Setup Live Environment'){
                 when {
-                    branch 'main'  
+                    branch 'master'  
                 }
                 steps{
                     sh "./scripts/setup-live-environment.sh"
                 }
-                
+            }
+            stage('Setup Staging Environment'){
                 when {
                     branch 'development'
                 }
@@ -23,8 +29,10 @@ pipeline{
             }
             stage('Build Images'){
                 when {
-                    branch 'main'
-                    branch 'development'
+                    anyOf {
+                        branch 'master';
+                        branch 'development'
+                    }
                 }
                 steps{
                     sh "./scripts/build.sh"
@@ -32,11 +40,14 @@ pipeline{
             }
             stage('Deploy Application'){
                 when {
-                    branch 'main'
-                    branch 'development'
+                    anyOf {
+                        branch 'master';
+                        branch 'development'
+                    }
                 }
                 steps{
                     sh "./scripts/deploy.sh"
                 }
             }
         }
+}
