@@ -36,4 +36,19 @@
         update_cache: yes
       become: yes
 
-    #https://github.com/arknoll/ansible-role-selenium/blob/master/tasks/main.yml
+    - name: "Clone git repository"
+      git:
+        repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
+        version: testing
+        dest: /home/tom/QA-Final-Project
+        accept_hostkey: yes
+
+    - name: Changing perm of "QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh", adding "+x"
+      file:
+        dest: QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh
+        mode: a+x
+
+    - name: "Change the working directory to angular and execute install e2e script"
+      ansible.builtin.shell: QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh #>> e2eLogs.txt
+      #args:
+        #chdir: QA-Final-Project/spring-petclinic-angular/
