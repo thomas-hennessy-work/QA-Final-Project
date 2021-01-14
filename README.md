@@ -22,6 +22,7 @@ Contents
 - [Deployment](#deployment)
 - [Issues](#issues)
 - [Future Improvements](#future-improvements)
+- [Authors](#authors)
 
 
 ### Resources
@@ -142,3 +143,9 @@ One approach could be that we set up a virtual machine scale set with a monitor 
 We successfully automated the deployment of the Pet Clinic application using a range of tools, methodologies and technologies we've learnt during our trainning. However there are a number of improvements I would like to implement
 * Add versioning of Docker images
 * Integrate project tracking with VCS to automatically keep track the project
+
+### Authors
+Iwan Moreton  
+Kiran Kalsi  
+Ryan Purchase  
+Thomas Hennessy
