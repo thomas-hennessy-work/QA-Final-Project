@@ -1,6 +1,12 @@
 #!/bin/bash
 kubectl delete namespaces staging
-kubectl apply -f kubernetes/database/database.yaml
-kubectl apply -f kubernetes/back-end/backend.yaml
-kubectl apply -f kubernetes/front-end/fontend.yaml
-kubectl apply -f kubernetes/nginx/nginx.yaml
+kubectl apply -f kubernetes/live/namespace/namespace.yaml
+kubectl apply -f kubernetes/live/database/database.yaml
+kubectl apply -f kubernetes/live/back-end/backend.yaml
+kubectl apply -f kubernetes/live/back-end/service.yaml
+kubectl apply -f kubernetes/live/front-end/fontend.yaml
+kubectl apply -f kubernetes/live/front-end/service.yaml
+kubectl apply -f kubernetes/live/nginx/nginx.yaml
+
+kubectl rollout restart -f kubernetes/live/back-end/backend.yaml
+kubectl rollout restart -f kubernetes/live/front-end/fontend.yaml

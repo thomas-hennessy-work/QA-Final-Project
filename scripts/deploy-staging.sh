@@ -1,5 +1,11 @@
 #!/bin/bash
-kubectl apply -f kubernetes/database/database.yaml
-kubectl apply -f kubernetes/back-end/backend.yaml
-kubectl apply -f kubernetes/front-end/fontend.yaml
-kubectl apply -f kubernetes/nginx/nginx.yaml
+kubectl apply -f kubernetes/staging/namespace/namespace.yaml
+kubectl apply -f kubernetes/staging/database/database.yaml
+kubectl apply -f kubernetes/staging/back-end/backend.yaml
+kubectl apply -f kubernetes/staging/back-end/service.yaml
+kubectl apply -f kubernetes/staging/front-end/fontend.yaml
+kubectl apply -f kubernetes/staging/front-end/service.yaml
+kubectl apply -f kubernetes/staging/nginx/nginx.yaml
+
+kubectl rollout restart -f kubernetes/staging/back-end/backend.yaml
+kubectl rollout restart -f kubernetes/staging/front-end/fontend.yaml

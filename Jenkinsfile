@@ -16,32 +16,32 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20tests%20successful'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20passed%20tests'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20tests%20failed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20failed%20tests'
                     }
                 }
             }
             stage('Setup Kubernetes Cluster'){
                 when {
-                    branch 'master'  
+                    anyOf{
+                        branch 'master';
+                        branch 'development'
+                    }
                 }
                 steps{
-                    sh "./scripts/setup-live-environment.sh"
+                    sh "./scripts/setup-cluster.sh"
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=kubernetes%20cluster%20created'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=kubernetes%20cluster%20created'
                     }
                 }
             }
             stage('Build Images'){
                 when {
-                    anyOf {
-                        branch 'master';
-                        branch 'development'
-                    }
+                    branch 'development'
                 }
                 steps{
                     sh "./scripts/build.sh"
@@ -55,7 +55,7 @@ pipeline{
                     }
                 }
             }
-            stage('Deploy Application'){
+            stage('Deploy Staging'){
                 when {
                     branch 'development';
                 }
@@ -64,14 +64,14 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'deployed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=staging%20environment%20deployed'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'failed%20to%20deploy'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=staging%20environment%20failed%20to%20deploy'
                     }
                 }
             }
-            stage('Deploy Application'){
+            stage('Deploy Live'){
                 when {
                     branch 'master';
                 }
@@ -80,10 +80,10 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20deployed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=application%20deployed'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + 'failed%20to%20deploy'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=application%20failed%20to%20deploy'
                     }
                 }
             }
