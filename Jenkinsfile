@@ -16,7 +16,8 @@ pipeline{
                 }
                 post{
                     always{
-                        junit 'tests/*.xml'
+                        sh 'cp -r /var/jenkins_home/tests/ $WORKSPACE/test-results'
+                        junit '**/test-results/*.xml'
                     }
                     success {
                         sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20passed%20tests'
