@@ -1,3 +1,5 @@
 FROM maven:3.6.3-jdk-8 AS build
+COPY pom.xml .
+RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
 COPY . .
-ENTRYPOINT ["mvn", "clean", "test"]
+ENTRYPOINT mvn surefire-report:report
