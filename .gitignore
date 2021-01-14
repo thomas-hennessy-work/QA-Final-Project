@@ -11,3 +11,5 @@ crash.log
 
 liveplan
 terraform.tfstate*
+
+terraform.lock.hcl
