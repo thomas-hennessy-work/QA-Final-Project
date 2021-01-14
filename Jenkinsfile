@@ -65,6 +65,7 @@ pipeline{
                 post{
                     success {
                         sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=staging%20environment%20deployed'
+                        archiveArtifacts artifacts: 'ip.txt'
                     }
                     failure {
                         sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=staging%20environment%20failed%20to%20deploy'
