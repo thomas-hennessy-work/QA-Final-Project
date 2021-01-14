@@ -1,0 +1,60 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install dockers requiered packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'python3-setuptools', 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3', 'python3-pip', 'virtualenv']
+
+    - name: adding docker GPG key
+      apt_key:
+          url: https://download.docker.com/linux/ubuntu/gpg
+          state: present
+
+    - name: add Docker repo
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: update and install docker (community eddition)
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: install dockers python module
+      pip:
+        executable: pip3
+        name: docker
+
+    - name: start docker
+      service: 
+        name: docker
+        state: started
+
+    - name: install docker pip package
+      pip:
+        executable: pip3
+        name: docker
+
+    - name: "Clone git repository"
+      git:
+        repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
+        version: add-jenkins-ansible
+        dest: /home/tom/QA-Final-Project
+        accept_hostkey: yes
+        force: yes
+
+    - name: Changing perm of "QA-Final-Project/scripts/install-jenkins.sh", adding "+x"
+      file:
+        dest: QA-Final-Project/scripts/install-jenkins.sh
+        mode: a+x
+
+    - name: "Run 'install-jenkins.sh' script'"
+      shell: /home/tom/QA-Final-Project/scripts/install-jenkins.sh
+      args:
+        chdir: /home/tom/QA-Final-Project/scripts
+
+    - name: Pause for 20 before gathering password
+      pause:
+        seconds: 20
+
+    - name: "Retreve Jenkins password"
+      shell: sudo cat /var/lib/docker/volumes/jenkins_home/_data/secrets/initialAdminPassword
+      
