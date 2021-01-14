@@ -33,6 +33,9 @@
         executable: pip3
         name: docker
 
+    - name: add user to the docker group
+      shell: sudo usermod -aG docker adminuser
+
     - name: "Clone git repository"
       git:
         repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
