@@ -88,6 +88,7 @@ impacts, who is reponsible for it and mitigation techniques that we may need. We
 The full document can be found [here](https://docs.google.com/spreadsheets/d/1FPQhilFS21OTPwLfwnTY9IsM0CSvjkmDsKdMlpmwgIE/edit?usp=sharing)
 
 ### Testing
+Testing files were all written prior to our project. As a team we had to make sure tests for the frontend, backend (unit tests) and e2e (integrated) were ran and passed successfully. We had to install and use new softwares such as J-Unit, Karma and protractor in order to acieve this.
 
 ### Technologies
 
@@ -138,5 +139,6 @@ One approach could be that we set up a virtual machine scale set with a monitor 
 ### Issues
 
 ### Future Improvements
+We successfully automated the deployment of the Pet Clinic application using a range of tools, methodologies and technologies we've learnt during our trainning. However there are a number of improvements I would like to implement
 * Add versioning of Docker images
 * Integrate project tracking with VCS to automatically keep track the project
