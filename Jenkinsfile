@@ -66,14 +66,14 @@ pipeline{
                     }
                 }
                 steps{
-                    sh "./scripts/integrationtesting.sh"
+                    sh "./scripts/integration-testing.sh"
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20successful'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20integration%20test%20successful'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20failed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20integration%20test%20failed'
                     }
                 }
             }

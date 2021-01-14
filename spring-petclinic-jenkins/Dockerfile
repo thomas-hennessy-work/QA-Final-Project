@@ -3,7 +3,7 @@ FROM  jenkins/jenkins
 USER root
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install apt-transport-https \
+    apt-get -y --no-install-recommends install python3-pip python3-setuptools apt-transport-https \
     ca-certificates \
     curl \
     gnupg2 \
@@ -28,8 +28,9 @@ RUN apt-get update && \
     wget https://releases.hashicorp.com/terraform/0.14.4/terraform_0.14.4_linux_amd64.zip && \
     unzip terraform_0.14.4_linux_amd64.zip && \
     sudo mv terraform /usr/local/bin && \
-    rm terraform_0.14.4_linux_amd64.zip
-
+    rm terraform_0.14.4_linux_amd64.zip && \
+    pip3 install ansible
+    
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 USER jenkins

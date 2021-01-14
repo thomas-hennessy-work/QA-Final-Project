@@ -40,7 +40,7 @@
       git:
         repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
         version: add-jenkins-ansible
-        dest: ../../QA-Final-Project
+        dest: ~/QA-Final-Project
         accept_hostkey: yes
         force: yes
 
