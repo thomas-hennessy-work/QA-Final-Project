@@ -66,7 +66,7 @@ The services we have chosen within the pipeline provide the most efficient metho
 
 #### Kuberenets Cluster
 Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 worker nodes. As presented in the diagram below. There are 3 replicas of the frontend and backend pods, and one replica each of the MySQL and Nginx pods.
-These pods are allocated randomly between the 2 worker nodes. We followed the common model of having one container per pod.
+These pods are allocated randomly between the 2 worker nodes. We followed the common model of having one container per pod.  
 ![cluster](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/aks.png)
 
 ### Project Tracking
@@ -117,7 +117,7 @@ We used Kubernetes as the orchestration tool to setup the live and staging envir
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
 BlueOcean Jenkins Plugin stuff...
 ![pipeline-live](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pipeline-live.PNG)
-![pipeline-staging](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pipeline-staging.PNG)
+![pipeline-staging](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pipeline-staging.PNG)  
 The GitHub webhook feature was particularly useful as whenever we commited a change to the source code 
 GitHub informed Jenkins and would automatically start a build.
 Our build logs are stored in Jenkins.  
