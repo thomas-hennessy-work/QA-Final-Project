@@ -136,9 +136,5 @@ One approach could be that we set up a virtual machine scale set with a monitor 
 ### Issues
 
 ### Future Improvements
-<<<<<<< HEAD
 * Add versioning of Docker images
 * Integrate project tracking with VCS to automatically keep track the project
-=======
-* Versioning docker images
->>>>>>> 2f82c968b4669de256a4d243b14af5ced125c828
