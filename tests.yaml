@@ -1,0 +1,12 @@
+version: "3.7"
+services: 
+  back-end:
+    image: qateam1/springclinicresttest:latest
+    build:
+      context: ./spring-petclinic-rest/.
+      dockerfile: Dockerfile.test
+  front-end:
+    image: qateam1/springclinicangulartest:latest
+    build: 
+      context: ./spring-petclinic-angular/.
+      dockerfile: Dockerfile.test
