@@ -62,7 +62,7 @@ The next image below represents our final continuous integration pipeline with t
 It is a breakdown of the services and tools used to develop and deploy a well-tested, functioning program.
 The services we have chosen within the pipeline provide the most efficient method of rapid development to be automated and tested.
 ##### Final CI Pipeline
-![final-pipeline]()
+![final-pipeline](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/CI-pipeline.png)
 
 #### Kuberenets Cluster
 Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 worker nodes. As presented in the diagram below.  
