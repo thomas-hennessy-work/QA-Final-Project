@@ -119,3 +119,4 @@ Below is a screenshot of the application's home page.
 ### Issues
 
 ### Future Improvements
+* Versioning docker images
