@@ -1,6 +1,5 @@
 #!/bin/bash
 cd terraform/environments/live
-az group delete -n stagingResources -y --no-wait
 terraform init 
 terraform plan --var-file=live.tfvars -out=liveplan
 terraform apply "liveplan"

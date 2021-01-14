@@ -23,7 +23,7 @@ pipeline{
                     }
                 }
             }
-            stage('Setup Live Environment'){
+            stage('Setup Kubernetes Cluster'){
                 when {
                     branch 'master'  
                 }
@@ -32,20 +32,7 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=Live%20environment%20configured'
-                    }
-                }
-            }
-            stage('Setup Staging Environment'){
-                when {
-                    branch 'development'
-                }
-                steps{
-                    sh "./scripts/setup-staging-environment.sh"
-                }
-                post{
-                    success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=Staging%20environment%20configured'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=kubernetes%20cluster%20created'
                     }
                 }
             }
@@ -70,13 +57,26 @@ pipeline{
             }
             stage('Deploy Application'){
                 when {
-                    anyOf {
-                        branch 'master';
-                        branch 'development'
-                    }
+                    branch 'development';
                 }
                 steps{
-                    sh "./scripts/deploy.sh"
+                    sh "./scripts/deploy-staging.sh"
+                }
+                post{
+                    success {
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'deployed'
+                    }
+                    failure {
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'failed%20to%20deploy'
+                    }
+                }
+            }
+            stage('Deploy Application'){
+                when {
+                    branch 'master';
+                }
+                steps{
+                    sh "./scripts/deploy-live.sh"
                 }
                 post{
                     success {

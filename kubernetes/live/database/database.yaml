@@ -4,6 +4,7 @@ metadata:
   name: mysql
   labels:
     app: mysql
+  namespace: staging
 spec:
   replicas: 1
   selector:
@@ -25,6 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
+  namespace: staging
 spec:
   ports:
   - protocol: TCP
@@ -33,3 +35,9 @@ spec:
   selector:
     app: mysql
 ---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: staging
+  labels:
+    name: staging
