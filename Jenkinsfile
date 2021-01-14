@@ -59,7 +59,6 @@ pipeline{
                     }
                 }
             }
-            testenvVirtualMachine
             stage('Start Environment Testing'){
                 when {
                     not{
