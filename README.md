@@ -15,7 +15,8 @@ Contents
 - [Kubernetes](#kubernetes)
 - [Terraform](#terraform)
 - [Jenkins](#jenkins)
-- [Front-End Design](#front-end-design)
+- [Nginx](#nginx)
+- [Deployment](#deployment)
 - [Issues](#issues)
 - [Future Improvements](#future-improvements)
 
@@ -67,9 +68,13 @@ Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 wo
 ### Project Tracking
 Before starting on the code for the application a Jira board 
 was set up and used to track the progress of the project and to demonstrate our team workflow, from planning to testing and finally to completion. We used epics to keep track of each part of the application which we then broke down into sub-tasks and assigned these to our sprints.
-Throughout this project we ran ... sprints. Below is a screenshot of our fisrt sprint, where we could see what needed to be done, what was in progess and what was done on one easily digestible board.
+Throughout this project we ran 2 sprints. Below is a screenshot of our fisrt sprint, where we could see what needed to be done, what was in progess and what was done on one easily digestible board.
 ![jira1](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/sprint1.PNG)  
-You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/software/projects/DFP/boards/3)
+You can find the full Jira Board [here](https://iwanmoreton.atlassian.net/jira/software/projects/DFP/boards/3)  
+Jira produces charts and reports automatically for the sprints. One of which is the burnup report, this was useful to help maintain our sprint's health by identifying problems such as scope creep or planned path deviation.
+Below is our burnup report for our first sprint.
+##### Burnup Report
+![burnup](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/burnup.PNG)
 
 ### Risk Assessment
 It is always important to carry out a risk assessment for any project as many different potential risks could arise.
@@ -86,7 +91,7 @@ We used Git as a version control system with GitHub as the provider (to store ou
 The team decided to have at least 2 members approve the request before it had been merged. Below is a screenshot of a merged pull request after being approved by 2 memebers of the team.  
 ![pull-request](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pull-request.PNG)  
 Usually we would delete our branches after they had been merged, but for the purpose of this project we have kept them to show that we were following the Feature-Branch model. Below is a screenshot of our branches.  
-![branches]()  
+![branches](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/branches.PNG)  
 
 We have also implemented GitHub's webhooks feature so our code can be polled by Jenkins' build triggers (automatic builds).
 
@@ -103,8 +108,12 @@ GitHub informed Jenkins and would automatically start a build.
 Our build logs are stored in Jenkins.  
 ![jenkinslogs]()
 
-### Front-End Design
-Below is a screenshot of the main page.  
+### Nginx
+We used Nginx as a load balancer, which handled all traffic and requests before being sent to the application.
+It was also used as a web server to connect to the application on port 80.
+
+### Deployment
+Below is a screenshot of the application's home page.  
 ![homepage](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/homepage.PNG)
 
 ### Issues
