@@ -1,3 +1,3 @@
 ResourceGroupName = "stagingResources"
-instanceAmount    = "2"
+instanceAmount    = "1"
 vmsize            = "Standard_D2_v2"

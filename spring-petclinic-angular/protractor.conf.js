@@ -9,6 +9,10 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
+    chromeOptions: {
+      binary: "/usr/bin/chromium-browser",
+      args: [ "--headless" ]
+    },
     'browserName': 'chrome'
   },
   directConnect: true,
