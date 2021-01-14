@@ -61,7 +61,9 @@
         #chdir: .
 
     - name: "Change the working directory to angular and execute install e2e script"
-      shell: /home/tom/QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh > e2eLogs.txt
+      shell: /home/tom/QA-Final-Project/spring-petclinic-angular/installE2EPackages.sh
       args:
         chdir: /home/tom/QA-Final-Project/spring-petclinic-angular
+      become: true
+      become_user: tom
       
