@@ -65,7 +65,8 @@ The services we have chosen within the pipeline provide the most efficient metho
 ![final-pipeline](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/CI-pipeline.png)
 
 #### Kuberenets Cluster
-Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 worker nodes. As presented in the diagram below.  
+Our Azure Kubernetes Service (AKS) cluster consists of one Master node with 2 worker nodes. As presented in the diagram below. There are 3 replicas of the frontend and backend pods, and one replica each of the MySQL and Nginx pods.
+These pods are allocated randomly between the 2 worker nodes.
 ![cluster](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/aks.png)
 
 ### Project Tracking
