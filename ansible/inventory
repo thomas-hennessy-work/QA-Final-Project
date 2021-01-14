@@ -1,5 +1,5 @@
 [test]
-51.132.57.240
+20.68.19.62
 
 [test:vars]
 ansible_user=tom
