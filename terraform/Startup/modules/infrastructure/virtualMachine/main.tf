@@ -25,3 +25,9 @@ resource "azurerm_linux_virtual_machine" "VirtualMachine"{
     version   = "latest"
   }
 }
+
+data "azurerm_public_ip" "ipAddressData" {
+  name                = var.IPAddresName
+  resource_group_name = var.ResourceGroupName
+  depends_on              = [azurerm_linux_virtual_machine.VirtualMachine]
+}

@@ -59,6 +59,25 @@ pipeline{
                     }
                 }
             }
+            testenvVirtualMachine
+            stage('Start Environment Testing'){
+                when {
+                    not{
+                        branch 'master'
+                    }
+                }
+                steps{
+                    sh "./scripts/integrationtesting.sh"
+                }
+                post{
+                    success {
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20successful'
+                    }
+                    failure {
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20failed'
+                    }
+                }
+            }
             stage('Deploy Staging'){
                 when {
                     branch 'development';

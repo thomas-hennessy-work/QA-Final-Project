@@ -42,3 +42,7 @@ module "infrastructure" {
 
     adminuser = var.adminuser
 }
+
+output "JenkinsIpAddress" {
+  value = module.infrastructure.IPAddress
+}

@@ -36,6 +36,7 @@ module "JenkinsvirtualMachine"{
     vmName = var.JenkinsName
 
     networkInterfaceID = module.jenkinsNetworkConfig.networkInterfaceID
+    IPAddresName = module.jenkinsNetworkConfig.IPAddresName
 }
 
 module "testEnvNetworkConfig"{
@@ -60,4 +61,5 @@ module "TestEnvvirtualMachine"{
     vmName = var.testName
 
     networkInterfaceID = module.testEnvNetworkConfig.networkInterfaceID
+    IPAddresName = module.testEnvNetworkConfig.IPAddresName
 }

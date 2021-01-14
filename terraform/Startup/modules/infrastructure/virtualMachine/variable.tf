@@ -10,3 +10,5 @@ variable "adminuser"{
 }
 variable "vmName" {
 }
+variable "IPAddresName" {
+}

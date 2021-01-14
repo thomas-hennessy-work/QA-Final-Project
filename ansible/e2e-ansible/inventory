@@ -1,5 +1,5 @@
 [test]
-
+testenvVirtualMachine
 
 [test:vars]
 ansible_user=tom
