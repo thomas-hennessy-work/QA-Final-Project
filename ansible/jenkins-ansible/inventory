@@ -1,5 +1,5 @@
 [jenkins]
-51.140.33.214
+
 
 [jenkins:vars]
 ansible_user=tom
