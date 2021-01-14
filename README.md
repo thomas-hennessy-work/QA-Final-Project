@@ -129,7 +129,7 @@ Below is a screenshot of the application's home page.
 ![homepage](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/homepage.PNG)
 
 ### Pricing
-The aim of the project was to keep an eye on the running/monthly costs. To deploy this application we used ... VMs in our AKS cluster, each with size ... . This lead to an estimated running cost of ... , thus £../month.
+The aim of the project was to keep an eye on the running/monthly costs. To deploy this application we used 2 VMs in our AKS cluster, each with size B2S . This lead to an estimated running cost of £1370.40 , thus £114.20/month.
 In future, if we monitored the traffic on this website, we would have a better idea on how to make our costing more efficient.
 One approach could be that we set up a virtual machine scale set with a monitor autoscaling setting, to automatically scale up/down VMs when there is more/less traffic. This will help to save more cost because you only pay for what you use.
 
