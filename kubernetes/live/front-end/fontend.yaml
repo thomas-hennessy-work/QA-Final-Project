@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springclinicangular
+  labels:
+    app: springclinicangular
+  namespace: live
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springclinicangular
+  template:
+    metadata:
+      labels:
+        app: springclinicangular
+    spec:
+      containers:
+        - name: springclinicangular
+          image: qateam1/springclinicangular:latest
+          imagePullPolicy: "Always"
+          ports:
+          - name: angular-port
+            containerPort: 8080

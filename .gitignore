@@ -9,7 +9,12 @@
 # Crash log files
 crash.log
 
+stagingplan
 liveplan
 terraform.tfstate*
+<<<<<<< HEAD
+*.lock.hcl
+=======
 
 terraform.lock.hcl
+>>>>>>> development

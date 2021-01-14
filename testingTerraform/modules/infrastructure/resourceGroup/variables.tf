@@ -1,4 +1,0 @@
-variable "ResourceGroupName" {
-}
-variable "location" {
-}
