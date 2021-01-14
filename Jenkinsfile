@@ -16,10 +16,10 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20tests%20successful'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20tests%20successful'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20tests20failed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20tests%20failed'
                     }
                 }
             }
@@ -48,10 +48,10 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20build%20successful'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20successful'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + '%20build20failed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20build%20failed'
                     }
                 }
             }
@@ -80,10 +80,10 @@ pipeline{
                 }
                 post{
                     success {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'deployed'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + '%20deployed'
                     }
                     failure {
-                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=+'+ CHAT_ID +'+\\&text=' + BRANCH_NAME + 'failed%20to%20deploy'
+                        sh 'curl https://api.telegram.org/bot'+ TELEGRAM_BOT +'/sendMessage?chat_id=-'+ CHAT_ID +'\\&text=' + BRANCH_NAME + 'failed%20to%20deploy'
                     }
                 }
             }
