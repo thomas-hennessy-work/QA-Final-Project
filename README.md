@@ -12,8 +12,8 @@ Contents
 - [Risk Assessment](#risk-assessment)
 - [Testing](#testing)
 - [Technologies](#technologies)
-  * [Git](#git)
   * [Azure](#azure)
+  * [Git](#git)
   * [Terraform](#terraform)
   * [Ansible](#ansible)
   * [Kubernetes](#kubernetes)
@@ -91,17 +91,17 @@ The full document can be found [here](https://docs.google.com/spreadsheets/d/1FP
 
 ### Technologies
 
+#### Azure
+We used Azure as the cloud provider to deploy the application in the production environment using an AKS cluster.
+
 #### Git
-We used Git as a version control system with GitHub as the provider (to store our code). Github has allowed us to checkout different branches of the project and focus on features separately. We would send pull requests to merge a branch into the developement branch once everything was functioning properly. 
+We used Git as a version control system with GitHub as the provider (to store, maintain and amend our code). Github has allowed us to checkout different branches of the project and focus on features separately. We would send pull requests to merge a branch into the developement branch once everything was functioning properly. 
 The team decided to have at least 2 members approve the request before it had been merged. Below is a screenshot of a merged pull request after being approved by 2 memebers of the team.  
 ![pull-request](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pull-request.PNG)  
 Usually we would delete our branches after they had been merged, but for the purpose of this project we have kept them to show that we were following the Feature-Branch model. Below is a screenshot of some of our branches.  
 ![branches](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/branches.PNG)  
 
 We have also implemented GitHub's webhooks feature so our code can be polled by Jenkins' build triggers (automatic builds).
-
-#### Azure
-We used Azure as the cloud provider to deploy the application in the production environment.
 
 #### Terraform
 We used Terraform as the provisioning tool to setup the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code. To avoid any duplication of code, modules (container for multiple resources that are used together) had been utilised to reference for later reuse.
@@ -115,7 +115,8 @@ We used Kubernetes as the orchestration tool to setup the live and staging envir
 #### Jenkins
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
 BlueOcean Jenkins Plugin stuff...
-![pipeline]()
+![pipeline-live](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pipeline-live.PNG)
+![pipeline-staging](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pipeline-staging.PNG)
 The GitHub webhook feature was particularly useful as whenever we commited a change to the source code 
 GitHub informed Jenkins and would automatically start a build.
 Our build logs are stored in Jenkins.  
