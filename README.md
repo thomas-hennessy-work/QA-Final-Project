@@ -13,9 +13,10 @@ Contents
 - [Testing](#testing)
 - [Technologies](#technologies)
   * [Git](#git)
-  * [Kubernetes](#kubernetes)
+  * [Azure](#azure)
   * [Terraform](#terraform)
   * [Ansible](#ansible)
+  * [Kubernetes](#kubernetes)
   * [Jenkins](#jenkins)
   * [Nginx](#nginx)
 - [Deployment](#deployment)
@@ -41,7 +42,7 @@ covered during our training. We had to take into consideration:
 * What are the running costs and monthly estimates? How could they be improved?
 
 #### Our Approach
-To fulfil the given requirements, as a team we ran daily stand-ups to view our implementations and to 
+To fulfil the given requirements we decided to use an agile methodology to allow us to adapt quickly to changes and have a more competitive edge. As a team we ran daily stand-ups to view our implementations and to 
 keep track of our progress - we also kept and maintained a project tracking board to clearly show 
 the effort that has been expended each day. We always held a Sprint Planning meeting at the beginning of our sprints 
 to decide what is going to be brought from the Product Backlog to the Sprint Backlog. Furthermore, at the end of each 
@@ -93,19 +94,22 @@ The full document can be found [here](https://docs.google.com/spreadsheets/d/1FP
 We used Git as a version control system with GitHub as the provider (to store our code). Github has allowed us to checkout different branches of the project and focus on features separately. We would send pull requests to merge a branch into the developement branch once everything was functioning properly. 
 The team decided to have at least 2 members approve the request before it had been merged. Below is a screenshot of a merged pull request after being approved by 2 memebers of the team.  
 ![pull-request](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pull-request.PNG)  
-Usually we would delete our branches after they had been merged, but for the purpose of this project we have kept them to show that we were following the Feature-Branch model. Below is a screenshot of our branches.  
+Usually we would delete our branches after they had been merged, but for the purpose of this project we have kept them to show that we were following the Feature-Branch model. Below is a screenshot of some of our branches.  
 ![branches](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/branches.PNG)  
 
 We have also implemented GitHub's webhooks feature so our code can be polled by Jenkins' build triggers (automatic builds).
 
-#### Kubernetes
-
+#### Azure
+We used Azure as the cloud provider to deploy the application in the production environment.
 
 #### Terraform
-We used Terraform as the provisioning tool to set up the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code. To avoid any duplication of code, modules (container for multiple resources that are used together) had been utilised to reference for later reuse.
+We used Terraform as the provisioning tool to setup the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code. To avoid any duplication of code, modules (container for multiple resources that are used together) had been utilised to reference for later reuse.
 
 #### Ansible
-Additionally, we used Ansible as our configuration management tool to configure the VM where the e2e tests were run
+Additionally, we used Ansible as our configuration management tool to configure the VM where the e2e tests were run.
+
+#### Kubernetes
+We used Kubernetes as the orchestration tool to setup the live and staging environments and to manage multiple containers deployed across multiple nodes. The AKS cluster was used to deploy the application with Kubernetes deployments and services.
 
 #### Jenkins
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
