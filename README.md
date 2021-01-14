@@ -14,6 +14,7 @@ Contents
 - [Git](#git)
 - [Kubernetes](#kubernetes)
 - [Terraform](#terraform)
+- [Ansible](#ansible)
 - [Jenkins](#jenkins)
 - [Nginx](#nginx)
 - [Deployment](#deployment)
@@ -101,6 +102,9 @@ We have also implemented GitHub's webhooks feature so our code can be polled by 
 ### Terraform
 We used Terraform as the provisioning tool to set up the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code.
 
+### Ansible
+Additionally, we used Ansible as our configuration management tool to configure the VM where the e2e tests were run
+
 ### Jenkins
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
 The GitHub webhook feature was particularly useful as whenever we commited a change to the source code 
@@ -119,7 +123,7 @@ Below is a screenshot of the application's home page.
 ### Pricing
 The aim of the project was to keep an eye on the running/monthly costs. To deploy this application we used ... VMs in our AKS cluster, each with size ... . This lead to an estimated running cost of ... , thus £../month.
 In future, if we monitored the traffic on this website, we would have a better idea on how to make our costing more efficient.
-One approach could be that we set up a virtual machine scale set with a monitor autoscaling setting, to automatically scale up/down VMs when there is more/less traffic.
+One approach could be that we set up a virtual machine scale set with a monitor autoscaling setting, to automatically scale up/down VMs when there is more/less traffic. This will help to save more cost because you only pay for what you use.
 
 ### Issues
 
