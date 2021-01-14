@@ -11,12 +11,13 @@ Contents
 - [Project Tracking](#project-tracking)
 - [Risk Assessment](#risk-assessment)
 - [Testing](#testing)
-- [Git](#git)
-- [Kubernetes](#kubernetes)
-- [Terraform](#terraform)
-- [Ansible](#ansible)
-- [Jenkins](#jenkins)
-- [Nginx](#nginx)
+- [Technologies](#technologies)
+  * [Git](#git)
+  * [Kubernetes](#kubernetes)
+  * [Terraform](#terraform)
+  * [Ansible](#ansible)
+  * [Jenkins](#jenkins)
+  * [Nginx](#nginx)
 - [Deployment](#deployment)
 - [Issues](#issues)
 - [Future Improvements](#future-improvements)
@@ -86,8 +87,9 @@ The full document can be found [here](https://docs.google.com/spreadsheets/d/1FP
 
 ### Testing
 
+### Technologies
 
-### Git
+#### Git
 We used Git as a version control system with GitHub as the provider (to store our code). Github has allowed us to checkout different branches of the project and focus on features separately. We would send pull requests to merge a branch into the developement branch once everything was functioning properly. 
 The team decided to have at least 2 members approve the request before it had been merged. Below is a screenshot of a merged pull request after being approved by 2 memebers of the team.  
 ![pull-request](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/pull-request.PNG)  
@@ -96,23 +98,25 @@ Usually we would delete our branches after they had been merged, but for the pur
 
 We have also implemented GitHub's webhooks feature so our code can be polled by Jenkins' build triggers (automatic builds).
 
-### Kubernetes
+#### Kubernetes
 
 
-### Terraform
-We used Terraform as the provisioning tool to set up the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code.
+#### Terraform
+We used Terraform as the provisioning tool to set up the AKS cluster with the correct VMs and their resource group. The Branch Model was used to promote best practises and to deploy to multiple environments (live, staging and testing), with the same infrastructure code. To avoid any duplication of code, modules (container for multiple resources that are used together) had been utilised to reference for later reuse.
 
-### Ansible
+#### Ansible
 Additionally, we used Ansible as our configuration management tool to configure the VM where the e2e tests were run
 
-### Jenkins
+#### Jenkins
 We used Jenkins as the CI Server. This allowed us to deploy the application very easily by creating a Jenkins Pipeline job using a multi-stage pipeline script.
+BlueOcean Jenkins Plugin stuff...
+![pipeline]()
 The GitHub webhook feature was particularly useful as whenever we commited a change to the source code 
 GitHub informed Jenkins and would automatically start a build.
 Our build logs are stored in Jenkins.  
 ![jenkinslogs]()
 
-### Nginx
+#### Nginx
 We used Nginx as a load balancer, which handled all traffic and requests before being sent to the application.
 It was also used as a web server to connect to the application on port 80.
 
