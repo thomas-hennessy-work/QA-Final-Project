@@ -51,6 +51,9 @@
       args:
         chdir: /home/tom/QA-Final-Project/scripts
 
+    - name: "Sleep for 10 seconds whilst password is gatherd"
+      shell: sleep 10
+
     - name: "Retreve Jenkins password"
       shell: sudo cat /var/lib/docker/volumes/jenkins_home/_data/secrets/initialAdminPassword
       
