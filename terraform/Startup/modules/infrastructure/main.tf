@@ -20,7 +20,7 @@ module "jenkinsNetworkConfig"{
     location = var.location
     ResourceGroupName = var.ResourceGroupName
     subnetPrefix = var.JenkinsSubnetPrefixe
-    subnetName = var.JenkinsName
+    Name = var.JenkinsName
 
     resourceGroupReference = module.resourceGroup.resourceGroupReference
     VNName = module.virtualNetwork.VNName
@@ -44,7 +44,7 @@ module "testEnvNetworkConfig"{
     location = var.location
     ResourceGroupName = var.ResourceGroupName
     subnetPrefix = var.testEnvSubnetPrefixe
-    subnetName = var.testName
+    Name = var.testName
 
     resourceGroupReference = module.resourceGroup.resourceGroupReference
     VNName = module.virtualNetwork.VNName

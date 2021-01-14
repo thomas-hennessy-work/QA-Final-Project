@@ -8,5 +8,5 @@ variable "VNName" {
 }
 variable "subnetPrefix" {
 }
-variable "subnetName" {
+variable "Name" {
 }

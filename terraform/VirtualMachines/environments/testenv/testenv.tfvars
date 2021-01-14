@@ -1,6 +1,0 @@
-location = "UK South"
-ResourceGroupName = "jenkinsResources"
-VMsize = "Standard_F2"
-adminuser = "tom"
-createResourceGroup = "0"
-createNetwork = "0"

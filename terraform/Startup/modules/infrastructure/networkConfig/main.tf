@@ -1,12 +1,12 @@
 resource "azurerm_subnet" "testEnvSubnet"{
-  name = "${var.subnetName}subnet"
+  name = "${var.Name}subnet"
   resource_group_name = var.ResourceGroupName
   virtual_network_name = var.VNName
   address_prefixes = [var.subnetPrefix]
 }
 
 resource "azurerm_public_ip" "testEnvPubIP" {
-  name                = "testEnvPubIP"
+  name                = "${var.Name}PubIP"
   resource_group_name = var.ResourceGroupName
   location            = var.location
   allocation_method   = "Dynamic"
@@ -14,12 +14,12 @@ resource "azurerm_public_ip" "testEnvPubIP" {
 }
 
 resource "azurerm_network_interface" "testEnvNetInt"{
-  name = "testEnvNetInt"
+  name = "${var.Name}NetInt"
   location = var.location
   resource_group_name = var.ResourceGroupName
 
   ip_configuration {
-    name = "testEnvIPConfig"
+    name = "${var.Name}IPConfig"
     subnet_id = azurerm_subnet.testEnvSubnet.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id = azurerm_public_ip.testEnvPubIP.id
