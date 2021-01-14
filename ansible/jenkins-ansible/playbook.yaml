@@ -47,7 +47,10 @@
         mode: a+x
 
     - name: "Run 'install-jenkins.sh' script'"
-      shell: /home/tom/QA-Final-Project/scripts/install-jenkins.sh >> logs.txt
+      shell: /home/tom/QA-Final-Project/scripts/install-jenkins.sh
       args:
         chdir: /home/tom/QA-Final-Project/scripts
+
+    - name: "Retreve Jenkins password"
+      shell: sudo cat /var/lib/docker/volumes/jenkins_home/_data/secrets/initialAdminPassword
       
