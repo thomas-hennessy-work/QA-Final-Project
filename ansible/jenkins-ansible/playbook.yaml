@@ -37,7 +37,7 @@
       git:
         repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
         version: add-jenkins-ansible
-        dest: /home/tom/QA-Final-Project
+        dest: ~/QA-Final-Project
         accept_hostkey: yes
         force: yes
 
@@ -47,9 +47,9 @@
         mode: a+x
 
     - name: "Run 'install-jenkins.sh' script'"
-      shell: /home/tom/QA-Final-Project/scripts/install-jenkins.sh
+      shell: ~/QA-Final-Project/scripts/install-jenkins.sh
       args:
-        chdir: /home/tom/QA-Final-Project/scripts
+        chdir: ~/QA-Final-Project/scripts
 
     - name: Pause for 20 before gathering password
       pause:
