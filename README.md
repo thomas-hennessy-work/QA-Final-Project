@@ -122,7 +122,7 @@ BlueOcean Jenkins Plugin stuff...
 The GitHub webhook feature was particularly useful as whenever we commited a change to the source code 
 GitHub informed Jenkins and would automatically start a build.
 Our build logs are stored in Jenkins.  
-![jenkinslogs]()
+![jenkinslogs](https://github.com/thomas-hennessy-work/QA-Final-Project/blob/readme/images/jenkins.png)
 
 #### Nginx
 We used Nginx as a load balancer, which handled all traffic and requests before being sent to the application.
