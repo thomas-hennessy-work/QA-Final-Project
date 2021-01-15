@@ -1,5 +1,5 @@
 [jenkins]
-
+51.11.139.187
 
 [jenkins:vars]
 ansible_user=adminuser

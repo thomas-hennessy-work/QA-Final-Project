@@ -39,20 +39,20 @@
     - name: "Clone git repository"
       git:
         repo: https://github.com/thomas-hennessy-work/QA-Final-Project.git
-        version: add-jenkins-ansible
-        dest: ~/QA-Final-Project
+        version: add-environment-configuration
+        dest: QA-Final-Project
         accept_hostkey: yes
         force: yes
 
     - name: Changing perm of "QA-Final-Project/scripts/install-jenkins.sh", adding "+x"
       file:
-        dest: ../../QA-Final-Project/scripts/install-jenkins.sh
+        dest: QA-Final-Project/scripts/install-jenkins.sh
         mode: a+x
 
     - name: "Run 'install-jenkins.sh' script'"
-      shell: ../../QA-Final-Project/scripts/install-jenkins.sh
+      shell: QA-Final-Project/scripts/install-jenkins.sh
       args:
-        chdir: ../../QA-Final-Project/scripts
+        #chdir: QA-Final-Project/scripts
 
     - name: Pause for 20 before gathering password
       pause:
