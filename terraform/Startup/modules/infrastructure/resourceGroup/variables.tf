@@ -1,0 +1,4 @@
+variable "ResourceGroupName" {
+}
+variable "location" {
+}

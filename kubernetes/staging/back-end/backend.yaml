@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-end
+  namespace: staging
+  labels:
+    app: back-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:  back-end
+  template:
+    metadata:
+      labels:
+        app:  back-end
+    spec:
+      containers:
+        - name:  back-end
+          image: qateam1/springclinicrest:latest
+          imagePullPolicy: "Always"
+          ports:
+          - name: back-end
+            containerPort: 9966
+
+

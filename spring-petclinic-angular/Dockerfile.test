@@ -1,0 +1,9 @@
+FROM qateam1/springclinicangulartestbase
+WORKDIR /testing
+COPY . /testing
+RUN npm install
+RUN npm install -g @angular/cli@8.0.3 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends chromium
+ENV CHROME_BIN=chromium
+ENTRYPOINT ng test
